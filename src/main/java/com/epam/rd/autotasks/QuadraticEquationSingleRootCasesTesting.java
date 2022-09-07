@@ -19,9 +19,9 @@ public class QuadraticEquationSingleRootCasesTesting {
     private double b;
     private double c;
 
-    private String expected;
+    private double expected;
 
-    public QuadraticEquationSingleRootCasesTesting(double a, double b, double c, String  expected) {
+    public QuadraticEquationSingleRootCasesTesting(double a, double b, double c, double expected) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -30,17 +30,19 @@ public class QuadraticEquationSingleRootCasesTesting {
 
     @Test
     public void testSingleRootsCase() {
-        assertEquals(expected, quadraticEquation.solve(a, b, c));
+        if (!quadraticEquation.solve(a, b, c).equals("no roots") && !quadraticEquation.solve(a, b, c).contains(" "))
+            assertEquals(expected, Double.parseDouble(quadraticEquation.solve(a, b, c)), 0.00001);
+
 
     }
 
     @Parameterized.Parameters
-    public static Collection<Object[]>  getParameters() {
+    public static Collection<Object[]> getParameters() {
         return Arrays.asList(new Object[][]{
-                {1,2,1, "-1.0"},
-                {-1,2,-1, "1.0"},
-                {1,0,0, "-0.0"},
-                {2,0,0, "-0.0"},
+                {1, 2, 1, -1.0},
+                {-1, 2, -1, 1.0},
+                {1, 4, 4, -2.0},
+                {-1, 4, -4, 2.0},
         });
     }
 

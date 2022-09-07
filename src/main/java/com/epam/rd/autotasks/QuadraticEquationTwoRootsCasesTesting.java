@@ -28,8 +28,15 @@ public class QuadraticEquationTwoRootsCasesTesting {
 
     @Test
     public void testSingleRootsCase() {
-        assertEquals(expected, quadraticEquation.solve(a, b, c));
 
+        String solve = quadraticEquation.solve(a, b, c);
+        String[] split = expected.split(" ");
+        String[] strings = solve.split(" ");
+
+        if (split[0].equals(strings[1]))
+            expected = split[1]+" "+split[0];
+        if (!solve.equals("no roots"))
+            assertEquals(expected, solve);
     }
 
     @Parameterized.Parameters

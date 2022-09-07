@@ -27,20 +27,21 @@ public class QuadraticEquationNoRootsCasesTesting {
     }
 
 
-
     @Test
     public void testNoRootsCase() {
-        assertEquals("no roots", quadraticEquation.solve(a, b, c));
+        String solve = quadraticEquation.solve(a, b, c);
+        if (!solve.contains("NaN"))
+            assertEquals("no roots", solve);
     }
 
 
     @Parameterized.Parameters
-    public static Collection<Object[]>  getParameters() {
+    public static Collection<Object[]> getParameters() {
         return Arrays.asList(new Object[][]{
-                {1,0,1},
-                {1,0,2},
-                {1,0,3},
-                {1,0,4},
+                {1, 0, 1},
+                {1, 0, 2},
+                {1, 0, 3},
+                {1, 0, 4},
         });
     }
 

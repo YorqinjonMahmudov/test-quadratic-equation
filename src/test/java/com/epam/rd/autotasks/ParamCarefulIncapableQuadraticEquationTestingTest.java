@@ -32,6 +32,7 @@ public class ParamCarefulIncapableQuadraticEquationTestingTest {
         Result result = junit.run(ParamCarefulIncapableQuadraticEquationSingleRootCasesTesting.class);
 
         assertTrue("There must be at least 4 cases for parametrized tests", result.getRunCount() >= 4);
+
         assertEquals("All the cases must fail on this implementation", result.getRunCount(), result.getFailureCount());
         for (Failure failure : result.getFailures()) {
             assertThat(failure.getException(), instanceOf(AssertionError.class));

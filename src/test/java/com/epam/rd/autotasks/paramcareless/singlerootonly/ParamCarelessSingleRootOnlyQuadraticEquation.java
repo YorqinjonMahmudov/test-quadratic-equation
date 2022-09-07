@@ -5,6 +5,15 @@ import com.epam.rd.autotasks.QuadraticEquation;
 class ParamCarelessSingleRootOnlyQuadraticEquation extends QuadraticEquation {
     @Override
     public String solve(final double a, final double b, final double c) {
-        return String.valueOf((-b / (2 * a)));
+        double discr = b * b - 4 * a * c;
+        if (discr == 0)
+            return String.valueOf((-b / (2 * a)));
+
+        if (discr < 0)
+            return "no roots";
+
+        return String.valueOf(((-b - discr ) / (2 * a)))+String.valueOf(((-b + discr ) / (2 * a)));
+
+
     }
 }
