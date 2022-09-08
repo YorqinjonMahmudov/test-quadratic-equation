@@ -22,10 +22,8 @@ public class ParamCarefulIncapableQuadraticEquationSingleRootCasesTesting extend
 
     @Test
     public void testSingleRootsCase() {
-        if (quadraticEquation.solve(a, b, c).equals("no roots") || quadraticEquation.solve(a, b, c).contains(" "))
-            if (quadraticEquation.solve(a, b, c).equals("no roots"))
-                throw new AssertionError();
-        assertEquals(expected, Double.parseDouble(quadraticEquation.solve(a, b, c)), 0.00001);
+        String solve = quadraticEquation.solve(a, b, c);
+        assertEquals(expected, Double.parseDouble(solve));
 
     }
 

@@ -12,7 +12,7 @@ class ParamCarelessSingleRootOnlyQuadraticEquation extends QuadraticEquation {
         if (discr < 0)
             return "no roots";
 
-        return String.valueOf(((-b - discr ) / (2 * a)))+String.valueOf(((-b + discr ) / (2 * a)));
+        return (-b - discr) / (2 * a) +String.valueOf(((-b + discr ) / (2 * a)));
 
 
     }

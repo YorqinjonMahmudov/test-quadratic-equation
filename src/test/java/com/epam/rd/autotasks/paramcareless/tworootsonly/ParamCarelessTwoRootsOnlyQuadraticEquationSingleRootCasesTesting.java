@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class ParamCarelessTwoRootsOnlyQuadraticEquationSingleRootCasesTesting extends QuadraticEquationSingleRootCasesTesting {
 
-    protected QuadraticEquation quadraticEquation = new QuadraticEquation();
+    protected QuadraticEquation quadraticEquation;
 
 
     private double a;
@@ -26,10 +26,7 @@ public class ParamCarelessTwoRootsOnlyQuadraticEquationSingleRootCasesTesting ex
 
         try {
 
-            if (!quadraticEquation.solve(a, b, c).equals("no roots") && !quadraticEquation.solve(a, b, c).contains(" "))
-                if (quadraticEquation.solve(a, b, c).equals("no roots"))
-                    throw new AssertionError();
-            assertEquals(expected, Double.parseDouble(quadraticEquation.solve(a, b, c)), 0.00001);
+            assertEquals(expected, Double.parseDouble(quadraticEquation.solve(a, b, c))+1, 0.00001);
         } catch (Exception e) {
             throw new AssertionError();
         }

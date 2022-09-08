@@ -29,7 +29,7 @@ public class ParamCarelessTwoRootsOnlyQuadraticEquationNoRootsCasesTesting exten
     @Test
     public void testNoRootsCase() {
         String solve = quadraticEquation.solve(a, b, c);
-            assertEquals("no roots", solve);
+            assertEquals("noroots", solve);
     }
 
 }
