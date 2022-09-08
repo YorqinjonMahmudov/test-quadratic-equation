@@ -20,13 +20,6 @@ public class ParamCarefulIncapableQuadraticEquationSingleRootCasesTesting extend
 
     private double expected;
 
-    @Test
-    public void testSingleRootsCase() {
-        String solve = quadraticEquation.solve(a, b, c);
-        assertEquals(expected, Double.parseDouble(solve));
-
-    }
-
     public ParamCarefulIncapableQuadraticEquationSingleRootCasesTesting(final double a, final double b, final double c, final double expected) {
         super(a, b, c, expected);
         this.a = a;
@@ -35,4 +28,11 @@ public class ParamCarefulIncapableQuadraticEquationSingleRootCasesTesting extend
         this.expected = expected;
         quadraticEquation = new ParamCarefulIncapableQuadraticEquation();
     }
+    @Test
+    public void testSingleRootsCase() {
+        String solve = quadraticEquation.solve(a, b, c);
+        assertEquals(expected, Double.parseDouble(solve));
+
+    }
+
 }

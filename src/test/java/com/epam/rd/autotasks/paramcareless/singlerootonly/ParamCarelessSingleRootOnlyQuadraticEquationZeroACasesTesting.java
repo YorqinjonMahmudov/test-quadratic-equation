@@ -30,12 +30,6 @@ public class ParamCarelessSingleRootOnlyQuadraticEquationZeroACasesTesting exten
     @Test
     public void testZeroRootsCase() {
         String solve = quadraticEquation.solve(a, b, c);
-        try {
-
-            if (quadraticEquation.solve(a, b, c).equals("NaN"))
-                throw new IllegalArgumentException();
-        } catch (IllegalArgumentException e) {
             assertEquals("no roots", solve);
-        }
     }
 }
