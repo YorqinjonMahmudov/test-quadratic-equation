@@ -24,10 +24,8 @@ public class QuadraticEquationZeroACasesTesting {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void testNoRootsCase() {
+    public void testZeroRootsCase() {
         String solve = quadraticEquation.solve(a, b, c);
-        if (quadraticEquation.solve(a, b, c).equals("NaN"))
-            throw new IllegalArgumentException();
         assertEquals("no roots", solve);
     }
 
@@ -41,6 +39,4 @@ public class QuadraticEquationZeroACasesTesting {
                 {0, 0, 4},
         });
     }
-
-
 }

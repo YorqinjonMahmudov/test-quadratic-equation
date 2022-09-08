@@ -31,8 +31,9 @@ public class QuadraticEquationSingleRootCasesTesting {
     @Test
     public void testSingleRootsCase() {
         if (!quadraticEquation.solve(a, b, c).equals("no roots") && !quadraticEquation.solve(a, b, c).contains(" "))
-            assertEquals(expected, Double.parseDouble(quadraticEquation.solve(a, b, c)), 0.00001);
-
+            if (quadraticEquation.solve(a, b, c).equals("no roots"))
+                throw new AssertionError();
+        assertEquals(expected, Double.parseDouble(quadraticEquation.solve(a, b, c)), 0.00001);
 
     }
 
