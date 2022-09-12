@@ -1,7 +1,6 @@
 package com.epam.rd.autotasks.paramcareful.incapable;
 
 import com.epam.rd.autotasks.QuadraticEquationSingleRootCasesTesting;
-import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -12,5 +11,4 @@ public class ParamCarefulIncapableQuadraticEquationSingleRootCasesTesting extend
         super(a, b, c, expected);
         quadraticEquation = new ParamCarefulIncapableQuadraticEquation();
     }
-
 }
